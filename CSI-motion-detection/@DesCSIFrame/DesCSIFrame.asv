@@ -1,0 +1,33 @@
+classdef DesCSIFrame
+    %DESCSIFRAME Summary of this class goes here
+    %   Detailed explanation goes here
+    
+    properties
+        MAC
+        Des_Time
+        Des_CSIMatrix
+        Des_Ampltitude
+
+    end
+    
+    methods
+   
+        function obj = DesCSIFrame(file)
+
+            if(isa(file, "RXSBundle"))
+                
+            elseif(isa(file,"cell"))
+                standard = obj.cell2Standard(file);
+                processData = obj.splitMACAddress(standard);
+                obj.MAC = processData.MAC;
+                obj.Des_Time = processData.Des_Time;
+                obj.Des_CSIMatrix = processData.Des_CSIMatrix;
+                obj.Des_Ampltitude = processData.Des_Ampltitude;
+            end
+        end
+
+
+        
+    end
+end
+
