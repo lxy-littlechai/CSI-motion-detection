@@ -1,7 +1,7 @@
 function plotSimilarity(data)
     
     for i = 1:1
-        dataSet = data(i);
+        dataSet = data.CSIFrame(i);
         if isempty(dataSet.Des_Amplitude)
             continue;
         end

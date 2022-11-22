@@ -14,7 +14,6 @@ function standard = cell2Standard(~, file)
         Time = ConvertDate(Timestamp);
         if Time ~= 0
             CSIMatrix = data_unit.CSI.CSI(:,1);
-
             standard(end+1) = struct('Source',MACAddressSource, 'Destination',MACAddressDestination, 'Time',Time, 'CSIMatrix',CSIMatrix);
         end 
         
